@@ -486,6 +486,7 @@ class Program
             Console.Write("What would you like to do? (1-5): ");
             string choice = Console.ReadLine();
 
+            // this is a spin off and simpler way instead of using a bunch of if statements
             switch (choice)
             {
                 case "1":

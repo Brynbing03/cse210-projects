@@ -1,3 +1,4 @@
+// DISREGUARD ALL OF THESE COMENTS, It is just a bunch of trial and error and initial tries to figure this assignment out... 
 // ORIGINAL TRIAL CODE haha it is a BUST! ;O
 // using System;
 // using System.Collections.Generic;

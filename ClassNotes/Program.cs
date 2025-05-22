@@ -53,3 +53,21 @@ int AddNumbers(int a, int b)
 }
 
 Console.WriteLine(AddNumbers(1, 2));
+
+
+public class SecretFamilyRecipe
+{
+    public string _password = "GrandmaDespisesBroccoli";
+
+    public string _recipe = "Quesadilla: Spread a thin layer of mayo on one tortilla, and shredded scheed and optional fillinfs, top with another tortilla, then cook in a skillet until crispy brown";
+
+    public string Reveal(string password)
+    {
+        if (password == _password)
+            return _recipe;
+        else
+        {
+            return "Nope, you're wrong...";
+        }
+    }
+}

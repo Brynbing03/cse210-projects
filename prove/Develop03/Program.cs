@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 // this class is going to hold the scripture book, chapter and verse
 class Reference
@@ -154,3 +155,4 @@ class Program
         Console.WriteLine("\nNow you have your scripture memorized! GREAT JOB! :)");
     }
 }
+

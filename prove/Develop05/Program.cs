@@ -47,7 +47,11 @@ class SimpleGoal : Goal
 
     public override bool IsComplete() => _isCompleted;
 
-    public override string GetStatusString() => ($"[{(_isCompleted ? "X" : " ")}] {_name} ({_description})");
+    public override string GetStatusString()
+    {
+        string ascii = _isCompleted ? "✔️ Simple & Done!" : "🔲 Simple Goal!";
+        return $"{ascii} [{(_isCompleted ? "X" : " ")}] {_name} ({_description})";
+    }
 
     public override string GetSaveString() => $"SimpleGoal:{_name}|{_description}|{_points}|{_isCompleted}";
 }
@@ -58,12 +62,16 @@ class EternalGoal : Goal
     public EternalGoal(string name, string description, int points)
         : base(name, description, points) { }
 
-    // even if recorded as complete, it will never be cmarks as done because you know... it is eternal
+    // even if recorded as complete, it will never be marked as done because you know... it is eternal
     public override void RecordEvent() { }
 
     public override bool IsComplete() => false;
 
-    public override string GetStatusString() => ($"[ ] {_name} ({_description})");
+    public override string GetStatusString()
+    {
+        string ascii = "♾️ Eternal Quest!";
+        return $"{ascii} [ ] {_name} ({_description})";
+    }
 
     public override string GetSaveString() => $"EternalGoal:{_name}|{_description}|{_points}";
 }
@@ -99,7 +107,10 @@ class ChecklistGoal : Goal
 
     // this includes progress information in the status string and saves string
     public override string GetStatusString()
-        => ($"[{(_currentCount >= _targetCount ? "X" : " ")}] {_name} ({_description}) -- Completed {_currentCount}/{_targetCount}");
+    {
+        string ascii = _currentCount >= _targetCount ? "✅ Checklist Complete!" : "📋 Checklist Goal!";
+        return $"{ascii} [{(_currentCount >= _targetCount ? "X" : " ")}] {_name} ({_description}) -- Completed {_currentCount}/{_targetCount}";
+    }
 
     public override string GetSaveString()
         => $"ChecklistGoal:{_name}|{_description}|{_points}|{_targetCount}|{_currentCount}|{_bonus}";
@@ -157,7 +168,7 @@ class GoalManager
         }
     }
 
-    // this lest the user picka goal to complete, it them records it and updates the score
+    // this lets the user pick a goal to complete, it then records it and updates the score
     public void RecordEvent()
     {
         ListGoals();
@@ -239,7 +250,7 @@ class Program
             Console.Write("Choose an option: ");
             input = Console.ReadLine();
 
-            // this loops it over and over agin until the user quits
+            // this loops it over and over again until the user quits
             switch (input)
             {
                 case "1": manager.CreateGoal(); break;

@@ -135,7 +135,7 @@ class Program
         // this creates a list of activities, using polymorphism to store different types
         List<Activity> activities = new List<Activity>
         {
-            // haha i used fun dates that are associated with my roomies and i :) we are pretty good!
+            // haha i used fun dates that are associated with my roomies and i :) they are pretty good!
             // each item is a different subclass activity
             new Running("11 Jan 2025", 30, 4.8),
             new Cycling("01 April 2025", 45, 20.0),
@@ -150,3 +150,5 @@ class Program
         }
     }
 }
+
+

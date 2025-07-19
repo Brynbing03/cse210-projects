@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-// this models a comment on haha a fake video
+// this models a comment on a fake video, haha
 class Comment
 {
     public string CommenterName { get; }
